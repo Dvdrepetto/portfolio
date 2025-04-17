@@ -7,7 +7,7 @@ export default function Intro() {
       <div className='mt-2 flex-1 md:mt-0'>
         <h1 className='title no-underline'>Hey, I&#39;m David.</h1>
         <p className='mt-3 font-light text-muted-foreground'>
-        I'm a web developer based in Marbella, Spain.<br/> 
+        I&#39;m a web developer based in Marbella, Spain.<br/> 
         During my time at the Ironhack bootcamp, I developed strong skills in modern technologies and agile methodologies, enabling me to build high-quality web applications.<br/>
         My previous training in JavaScript at Coderhouse further strengthened my foundation and problem-solving abilities in front-end development.<br/> 
         I’m proficient in HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB, and I have experience working with Agile methodologies and Git version control.<br/> 
