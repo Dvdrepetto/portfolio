@@ -4,7 +4,7 @@ import { z } from 'zod'
 import { toast } from 'sonner'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { VolunteerFormSchema, VolunteerInputs } from '@/lib/schemas'
+import { ContactFormSchema, VolunteerInputs } from '@/lib/schemas'
 import { sendEmail } from '@/lib/actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -15,7 +15,7 @@ import { Dog } from 'lucide-react'
 export default function VolunteerForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } =
     useForm<VolunteerInputs>({
-      resolver: zodResolver(VolunteerFormSchema),
+      resolver: zodResolver(ContactFormSchema),
       defaultValues: { name: '', email: '', city: '', availability: '' }
     })
 

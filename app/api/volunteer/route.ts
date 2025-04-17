@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { VolunteerInputs, VolunteerFormSchema } from '@/lib/schemas'
+import { VolunteerInputs, ContactFormSchema } from '@/lib/schemas'
 import { saveVolunteerToFile } from './utils'
 
 export async function POST(req: NextRequest) {
     const body = await req.json() as VolunteerInputs
 
-    const result = VolunteerFormSchema.safeParse(body)
+    const result = ContactFormSchema.safeParse(body)
 
     if (!result.success) {
         return NextResponse.json({ error: result.error.format() }, { status: 400 })
