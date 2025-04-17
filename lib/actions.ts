@@ -1,12 +1,12 @@
 'use client'
 
-import { VolunteerFormSchema } from '@/lib/schemas'
+import { ContactFormSchema } from '@/lib/schemas'
 import { z } from 'zod'
 
-type VolunteerInputs = z.infer<typeof VolunteerFormSchema>
+type VolunteerInputs = z.infer<typeof ContactFormSchema>
 
-export async function joinVolunteer(data: VolunteerInputs) {
-  const result = VolunteerFormSchema.safeParse(data)
+export async function sendEmail(data: VolunteerInputs) {
+  const result = ContactFormSchema.safeParse(data)
 
   if (!result.success) {
     return { error: result.error.format() }

@@ -4,8 +4,8 @@ import { z } from 'zod'
 import { toast } from 'sonner'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { VolunteerFormSchema, VolunteerInputs } from '@/lib/schemas'
-import { joinVolunteer } from '@/lib/actions'
+import { ContactFormSchema, VolunteerInputs } from '@/lib/schemas'
+import { sendEmail } from '@/lib/actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -15,12 +15,12 @@ import { Dog } from 'lucide-react'
 export default function VolunteerForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } =
     useForm<VolunteerInputs>({
-      resolver: zodResolver(VolunteerFormSchema),
+      resolver: zodResolver(ContactFormSchema),
       defaultValues: { name: '', email: '', city: '', availability: '' }
     })
 
   const onSubmit: SubmitHandler<VolunteerInputs> = async (data) => {
-    const result = await joinVolunteer(data)
+    const result = await sendEmail(data)
     if (result.error) {
       toast.error('Oops! Something went wrong.')
       return
