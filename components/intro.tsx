@@ -18,7 +18,7 @@ export default function Intro() {
       </div>
       <div className='relative'>
         <Image
-          className='flex-1 w-full rounded-lg grayscale transition-all hover:grayscale-0'
+          className='flex-1  w-full h-96 rounded-lg grayscale  transition-all hover:grayscale-0'
           src={authorImage}
           alt='David Repetto'
           width={175}
