@@ -9,11 +9,6 @@ export default function Intro() {
         <p className='mt-3 font-light text-muted-foreground'>
           I&apos;m a web developer based in Marbella, Spain.<br />
           During my time at the Ironhack bootcamp, I developed strong skills in modern technologies and agile methodologies, enabling me to build high-quality web applications.<br />
-          My previous training in JavaScript at Coderhouse further strengthened my foundation and problem-solving abilities in front-end development.<br />
-          I&apos;m proficient in HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB, and I have experience working with Agile methodologies and Git version control.<br />
-          Before transitioning into tech, I developed teamwork and adaptability in fast-paced environments during buffet and kitchen services.<br />
-          My short-term goal is to continue enhancing my technical expertise and problem-solving skills as a Full Stack Developer on innovative projects.<br />
-          Outside of technology, my lifelong passion for football has taught me the value of teamwork, leadership, and strategic decision-making—qualities I bring to every professional endeavor.
         </p>
       </div>
       <div className='relative'>
