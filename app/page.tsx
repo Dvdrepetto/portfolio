@@ -1,5 +1,5 @@
 import Intro from '@/components/intro'
-import NewsletterForm from '@/components/newsletter-form'
+import NewsletterForm from '@/components/volunteer-form'
 import RecentPosts from '@/components/recent-posts'
 import RecentProjects from '@/components/recent-projects'
 
