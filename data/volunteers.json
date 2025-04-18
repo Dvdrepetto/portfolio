@@ -26,5 +26,12 @@
     "city": "Málaga",
     "availability": "asdasdad",
     "createdAt": "2025-04-17T15:08:18.823Z"
+  },
+  {
+    "name": "David Emanuel Repetto",
+    "email": "davidmrepetto@gmail.com",
+    "city": "Málaga",
+    "availability": "yes",
+    "createdAt": "2025-04-17T19:24:31.911Z"
   }
 ]
