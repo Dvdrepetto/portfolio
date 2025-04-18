@@ -12,19 +12,19 @@ export default function Intro() {
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
-    I love building web apps that solve real problems. I’ve trained at Ironhack and Coderhouse, where I learned to work with modern technologies like React, Node.js, and MongoDB, always with an Agile mindset.
+    I love building web apps that solve real problems. I&apos;ve trained at Ironhack and Coderhouse, where I learned to work with modern technologies like React, Node.js, and MongoDB, always with an Agile mindset.
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
-    Before switching to tech, I worked in fast-paced environments like kitchens and buffets — that's where I picked up teamwork, adaptability, and hustle.
+    Before switching to tech, I worked in fast-paced environments like kitchens and buffets — That&apos;s where I picked up teamwork, adaptability, and hustle.
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
-    Now I’m looking to grow as a Full Stack Developer, keep learning, and join projects that make a real impact.
+    Now I&apos;m looking to grow as a Full Stack Developer, keep learning, and join projects that make a real impact.
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
-    Off the clock, football keeps me sharp — it’s taught me about strategy, leadership, and playing for the team.
+    Off the clock, football keeps me sharp — It&apos;s taught me about strategy, leadership, and playing for the team.
   </span>
 </p>
 
