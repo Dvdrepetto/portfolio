@@ -16,11 +16,11 @@ export default function Intro() {
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
-    Before switching to tech, I worked in fast-paced environments like kitchens and buffets — That&apos;s where I picked up teamwork, adaptability, and hustle.
+    Before switching to tech, I worked in fast-paced environments like kitchens and buffets — That&#39;s where I picked up teamwork, adaptability, and hustle.
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
-    Now I&apos;m looking to grow as a Full Stack Developer, keep learning, and join projects that make a real impact.
+    Now I&#39;m looking to grow as a Full Stack Developer, keep learning, and join projects that make a real impact.
   </span>
   <br />
   <span className='hover:text-white hover:brightness-125 transition duration-300'>
