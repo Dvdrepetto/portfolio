@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { VolunteerInputs, VolunteerFormSchema } from '@/lib/schemas'
-import { saveVolunteerToFile } from './utils'
+import { saveVolunteerToFirestore } from '@/lib/saveVolunteers'
 
 export async function POST(req: NextRequest) {
     const body = await req.json() as VolunteerInputs
@@ -12,11 +12,10 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: result.error.format() }, { status: 400 })
     }
 
-    const saved = await saveVolunteerToFile(result.data)
-
+    const saved = await saveVolunteerToFirestore(result.data)
     if (saved.error) {
         return NextResponse.json({ error: saved.error }, { status: 500 })
     }
 
-    return NextResponse.json({ ok: true }, { status: 200 })
+    return NextResponse.json({ ok: true, id: saved.id }, { status: 200 })
 }

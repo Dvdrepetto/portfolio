@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { VolunteerFormSchema, VolunteerInputs } from '@/lib/schemas'
-import { sendEmail } from '@/lib/actions'
+import { sendVolunteer } from '@/lib/actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -19,20 +19,22 @@ export default function VolunteerForm() {
       defaultValues: { name: '', email: '', city: '', availability: '' }
     })
 
-  const onSubmit: SubmitHandler<VolunteerInputs> = async (data) => {
-    const result = await sendEmail(data)
-    if (result.error) {
-      toast.error('Oops! Something went wrong.')
-      return
+    const onSubmit: SubmitHandler<VolunteerInputs> = async (data) => {
+      console.log('🚀 onSubmit fired:', data)
+      const result = await sendVolunteer(data)
+    
+      if ('error' in result) {
+        toast.error(result.error)
+      } else {
+        toast.success(
+          <div className="flex items-center gap-2">
+            <Dog className="w-5 h-5 text-yellow-500" />
+            <span>Thank you for joining Petinder Volunteers!</span>
+          </div>
+        )
+        reset()
+      }
     }
-    toast.success(
-  <div className="flex items-center gap-2">
-    <Dog className="w-5 h-5 text-yellow-500" />
-    <span>Thank you for joining Petinder Volunteers!</span>
-  </div>
-)
-    reset()
-  }
 
   return (
     <section>
