@@ -18,7 +18,6 @@ export async function POST(req: NextRequest) {
         })
         return NextResponse.json({ ok: true, id: docRef.id }, { status: 200 })
     } catch (e: any) {
-        console.error('Error saving volunteer:', e)
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
     }
 }

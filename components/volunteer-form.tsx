@@ -20,7 +20,7 @@ export default function VolunteerForm() {
     })
 
     const onSubmit: SubmitHandler<VolunteerInputs> = async (data) => {
-      console.log('🚀 onSubmit fired:', data)
+      
       const result = await sendVolunteer(data)
     
       if ('error' in result) {

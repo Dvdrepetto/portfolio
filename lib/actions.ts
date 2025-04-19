@@ -13,8 +13,6 @@ export async function sendVolunteer(data: VolunteerInputs): Promise<VolunteerRes
   }
 
   // 2) Muestra en consola lo que vas a enviar (payload)
-  console.log('📨 Sending to /api/volunteer:', parsed.data)
-
   try {
     const response = await fetch('/api/volunteer', {
       method: 'POST',
@@ -22,7 +20,6 @@ export async function sendVolunteer(data: VolunteerInputs): Promise<VolunteerRes
       body: JSON.stringify(parsed.data),
     })
     const body = await response.json()
-    console.log('📬 Response from /api/volunteer:', body)
 
     // 3) Maneja errores de status
     if (!response.ok) {
@@ -36,7 +33,6 @@ export async function sendVolunteer(data: VolunteerInputs): Promise<VolunteerRes
     // 4) Éxito (usamos `ok` para coincidir con tu API)
     return { ok: true, id: body.id }
   } catch (e: any) {
-    console.error('❌ Network or unexpected error:', e)
     return { error: e.message || 'Network error' }
   }
 }

@@ -32,7 +32,6 @@ export async function saveVolunteerToFirestore(
         })
         return { success: true, id: docRef.id }
     } catch (e: any) {
-        console.error('❌ Error saving volunteer to Firestore:', e)
         return { success: false, error: e.message }
     }
 }
