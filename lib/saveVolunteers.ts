@@ -1,30 +1,38 @@
 // lib/saveVolunteers.ts
-import { db } from './firebase'
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
-import { VolunteerInputs } from './schemas'
+import admin from 'firebase-admin'
+import { getApps, cert } from 'firebase-admin/app'
+import { VolunteerInputs } from '@/lib/schemas'
 
-export async function saveVolunteerToFirestore(data: VolunteerInputs) {
-    const payload = {
-        ...data,
-        createdAt: serverTimestamp(),
-    }
-
-    // Auditoría: imprime cada campo y su tipo
-    console.log('📦 Payload to save:')
-    Object.entries(payload).forEach(([key, value]) => {
-        console.log(`  • ${key}:`, value, `(${typeof value})`)
+// Inicializa el Admin SDK UNA sola vez
+if (!getApps().length) {
+    admin.initializeApp({
+        credential: admin.credential.cert({
+            projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
+            clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,
+            privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        }),
     })
-
-    try {
-        console.log('🧪 Final payload sent to Firestore:', JSON.stringify(payload, null, 2))
-        const docRef = await addDoc(collection(db, 'volunteers'), payload)
-        return { success: true, id: docRef.id } 
-    
-        
-    } catch (error: any) {
-        console.error('❌ Firestore error:', error)
-        return { error: error.message || 'Error saving to Firestore' }
-    }
 }
 
+const db = admin.firestore()
 
+export interface SaveVolunteerResult {
+    success: boolean
+    id?: string
+    error?: string
+}
+
+export async function saveVolunteerToFirestore(
+    data: VolunteerInputs
+): Promise<SaveVolunteerResult> {
+    try {
+        const docRef = await db.collection('volunteers').add({
+            ...data,
+            createdAt: admin.firestore.Timestamp.now(),
+        })
+        return { success: true, id: docRef.id }
+    } catch (e: any) {
+        console.error('❌ Error saving volunteer to Firestore:', e)
+        return { success: false, error: e.message }
+    }
+}
