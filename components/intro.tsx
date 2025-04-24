@@ -29,13 +29,13 @@ export default function Intro() {
         </p>
 
       </div>
-      <div className="relative w-full">
+      <div className="relative  flex h-128 w-64 items-center justify-center rounded-xl overflow-hidden border-2 border-white bg-muted p-1 dark:border-muted">
         <Image
-          className="w-full rounded-lg grayscale transition-all hover:grayscale-0"
+          className="h-8 rounded-lg grayscale transition-all hover:grayscale-0"
           src={authorImage}
           alt="David Repetto"
-          width={500}
-          height={400}
+          width={50}
+          height={20}
           layout="responsive"
           priority
         />
