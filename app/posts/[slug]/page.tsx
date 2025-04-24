@@ -42,7 +42,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             <Image
               src={image}
               alt={title || ''}
-              className='object-cover'
+              className='object-contain'
               fill
             />
           </div>

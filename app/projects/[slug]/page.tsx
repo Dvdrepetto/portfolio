@@ -45,7 +45,7 @@ export default async function Project({
             <Image
               src={image}
               alt={title || ''}
-              className='object-cover'
+              className='object-contain'
               fill
             />
           </div>
