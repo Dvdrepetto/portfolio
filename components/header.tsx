@@ -21,6 +21,11 @@ export default function Header() {
           <li className='transition-colors hover:text-foreground'>
             <Link href='/contact'>Contact</Link>
           </li>
+          <li className='transition-colors hover:text-foreground'>
+            <a href='/images/RepettoDavid_CV.pdf' target='_blank' rel='noopener noreferrer'>
+              Resume
+            </a>
+          </li>
         </ul>
 
         <div>
